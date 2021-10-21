@@ -1,0 +1,23 @@
+{
+    "name": "phpbehavior/phpbehavior",
+    "type": "library",
+    "description": "Assert your code respect some behaviors: implement an interface, typehint parameters etc",
+    "license": "MIT",
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "php-pp/collection": "0.9.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9.5.*",
+        "symfony/var-dumper": "5.3.*"
+    },
+    "config": {
+        "cache-dir": "/app/var/composer/cache",
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "PhpBehavior\\": "src/"
+        }
+    }
+}
