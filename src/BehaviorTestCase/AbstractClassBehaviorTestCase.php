@@ -8,8 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 abstract class AbstractClassBehaviorTestCase extends TestCase
 {
-    use PhpVersionTrait;
-
     /** @return class-string */
     abstract protected static function getClassName(): string;
 
