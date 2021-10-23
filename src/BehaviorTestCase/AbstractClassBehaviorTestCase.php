@@ -8,6 +8,8 @@ use PHPUnit\Framework\TestCase;
 
 abstract class AbstractClassBehaviorTestCase extends TestCase
 {
+    use PhpVersionTrait;
+
     /** @return class-string */
     abstract protected static function getClassName(): string;
 
@@ -32,12 +34,12 @@ abstract class AbstractClassBehaviorTestCase extends TestCase
             static::getReflectionClass()->getInterfaces(),
             'Class '
                 . static::getClassName()
-                . ' should implement '
-                . $count
-                . ' interface'
-                . ($count > 1 ? 's' : null)
-                . ' but implement '
+                . ' implement '
                 . count(static::getReflectionClass()->getInterfaces())
+                . ' interface'
+                . (count(static::getReflectionClass()->getInterfaces()) > 1 ? 's' : null)
+                . ' but should implement '
+                . $count
                 . '.'
         );
     }
