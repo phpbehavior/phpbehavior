@@ -6,6 +6,11 @@ namespace PhpBehavior\BehaviorTestCase;
 
 trait PhpVersionTrait
 {
+    protected function isPhp7(): bool
+    {
+        return static::isPhpBetween('7.0.0', '8.0.0');
+    }
+
     protected function isPhp70(): bool
     {
         return static::isPhpBetween('7.0.0', '7.1.0');
@@ -29,6 +34,11 @@ trait PhpVersionTrait
     protected function isPhp74(): bool
     {
         return static::isPhpBetween('7.4.0', '7.5.0');
+    }
+
+    protected function isPhp8(): bool
+    {
+        return static::isPhpBetween('8.0.0', '9.0.0');
     }
 
     protected function isPhp80(): bool

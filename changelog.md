@@ -1,5 +1,7 @@
 ### master
 
+- Add `PhpVersionTrait::isPhp7()` and `isPhp8()`
+
 ### [0.3.0](../../compare/0.1.0...0.3.0) - 2021-10-23
 
 - Add `.gitattributes`
