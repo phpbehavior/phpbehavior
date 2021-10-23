@@ -140,5 +140,4 @@ updateAssertionsBadge
 updateCoverageBadge
 updateInfectionBadge
 updateComposerRequire
-# Wait 0.0.1 to uncomment
-#updateChangelog
+updateChangelog
