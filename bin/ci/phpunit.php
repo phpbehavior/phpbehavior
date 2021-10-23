@@ -15,7 +15,7 @@ require dirname(__DIR__, 2) . '/vendor/autoload.php';
 
 function createPhpunitProcesses(string $phpVersion = null): ProcessArray
 {
-    $phpVersions = new StringCollection(is_string($phpVersion) ? [$phpVersion] : ['7.4', '8.0']);
+    $phpVersions = is_string($phpVersion) ? [$phpVersion] : ['7.4', '8.0'];
 
     $return = new ProcessArray();
     foreach ($phpVersions as $loopPhpVersion) {
@@ -32,15 +32,15 @@ function createPhpunitProcess(string $phpVersion): Process
 }
 
 $phpVersion = null;
-$applicationArgv = new StringCollection();
+$applicationArgv = [];
 foreach ($argv as $arg) {
     if (substr($arg, 0, 6) === '--php=') {
         $phpVersion = substr($arg, 6);
     } else {
-        $applicationArgv->add($arg);
+        $applicationArgv[] = $arg;
     }
 }
 
 (new ParallelProcessesApplication())
     ->addProcesses(createPhpunitProcesses($phpVersion))
-    ->run(new ArgvInput($applicationArgv->toArray()));
+    ->run(new ArgvInput($applicationArgv));
