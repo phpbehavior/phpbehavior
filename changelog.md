@@ -1,5 +1,7 @@
 ### master
 
+- Remove `PhpVersionTrait`
+
 ### [0.4.0](../../compare/0.3.0...0.4.0) - 2021-10-23
 
 - Add `PhpVersionTrait::isPhp7()` and `isPhp8()`
