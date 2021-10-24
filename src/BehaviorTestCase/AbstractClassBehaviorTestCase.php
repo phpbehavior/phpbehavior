@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace PhpBehavior\BehaviorTestCase;
 
 use PHPUnit\Framework\TestCase;
+use Steevanb\VersionComparator\Comparator\PhpVersionComparator;
 
 abstract class AbstractClassBehaviorTestCase extends TestCase
 {
@@ -25,20 +26,20 @@ abstract class AbstractClassBehaviorTestCase extends TestCase
         return static::$reflectionClass;
     }
 
-    protected function assertImplementsCount(int $count): void
+    protected static function assertImplementsCount(int $count): void
     {
         static::assertCount(
             $count,
             static::getReflectionClass()->getInterfaces(),
             'Class '
-                . static::getClassName()
-                . ' implement '
-                . count(static::getReflectionClass()->getInterfaces())
-                . ' interface'
-                . (count(static::getReflectionClass()->getInterfaces()) > 1 ? 's' : null)
-                . ' but should implement '
-                . $count
-                . '.'
+            . static::getClassName()
+            . ' implement '
+            . count(static::getReflectionClass()->getInterfaces())
+            . ' interface'
+            . (count(static::getReflectionClass()->getInterfaces()) > 1 ? 's' : null)
+            . ' but should implement '
+            . $count
+            . '.'
         );
     }
 
@@ -49,5 +50,11 @@ abstract class AbstractClassBehaviorTestCase extends TestCase
             static::getReflectionClass()->getInterfaces(),
             'Class ' . static::getClassName() . ' should implement ' . $interface . '.'
         );
+    }
+
+    /** @return array<string|int, string> */
+    protected static function getExpectedInterfaces(): array
+    {
+        return [];
     }
 }
