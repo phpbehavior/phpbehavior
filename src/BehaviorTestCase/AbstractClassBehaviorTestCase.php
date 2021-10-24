@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PhpBehavior\BehaviorTestCase;
 
 use PHPUnit\Framework\TestCase;
-use Steevanb\VersionComparator\Comparator\PhpVersionComparator;
 
 abstract class AbstractClassBehaviorTestCase extends TestCase
 {
