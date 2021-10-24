@@ -6,8 +6,8 @@ namespace PhpBehavior\Tests\Unit\BehaviorTestCase\AbstractClassBehaviorTestCase;
 
 use PhpBehavior\{
     BehaviorTestCase\AbstractClassBehaviorTestCase,
-    Tests\Data\Foo,
-    Tests\Data\FooInterface
+    Tests\Data\Test,
+    Tests\Data\TestInterface
 };
 
 /** @covers \PhpBehavior\BehaviorTestCase\AbstractClassBehaviorTestCase::assertImplement */
@@ -15,11 +15,11 @@ final class AssertImplementTest extends AbstractClassBehaviorTestCase
 {
     protected static function getClassName(): string
     {
-        return Foo::class;
+        return Test::class;
     }
 
     public function testAssertImplement(): void
     {
-        static::assertImplement(FooInterface::class);
+        static::assertImplement(TestInterface::class);
     }
 }
