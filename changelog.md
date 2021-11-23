@@ -1,5 +1,7 @@
 ### master
 
+- Add `AbstractMethodBehaviorTestCase`
+
 ### [0.7.0](../../compare/0.6.0...0.7.0) - 2021-10-24
 
 - Add `ClassImplementTrait`

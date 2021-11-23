@@ -4,6 +4,8 @@ parameters:
         - ../../src
         - ../../tests
     checkGenericClassInNonGenericObjectType: false
+    ignoreErrors:
+        - '#Method PhpBehavior\\Tests\\Unit\\BehaviorTestCase\\AbstractMethodBehaviorTestCase\\ClassNotFoundTest\:\:getClassName\(\) should return class-string but returns string\.#'
 includes:
     - /composer/vendor/phpstan/phpstan-deprecation-rules/rules.neon
     - /composer/vendor/phpstan/phpstan-phpunit/rules.neon
