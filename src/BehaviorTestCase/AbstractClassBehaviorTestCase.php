@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PhpBehavior\BehaviorTestCase;
 
+use PhpBehavior\Exception\ClassNotFoundException;
 use PHPUnit\Framework\TestCase;
 
 abstract class AbstractClassBehaviorTestCase extends TestCase
@@ -16,6 +17,10 @@ abstract class AbstractClassBehaviorTestCase extends TestCase
     public static function setUpBeforeClass(): void
     {
         parent::setUpBeforeClass();
+
+        if (class_exists(static::getClassName()) === false) {
+            throw new ClassNotFoundException(static::getClassName());
+        }
 
         static::$reflectionClass = new \ReflectionClass(static::getClassName());
     }
