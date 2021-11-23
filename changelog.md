@@ -1,5 +1,7 @@
 ### master
 
+### [0.8.0](../../compare/0.7.0...0.8.0) - 2021-11-23
+
 - Add `AbstractMethodBehaviorTestCase`
 
 ### [0.7.0](../../compare/0.6.0...0.7.0) - 2021-10-24
